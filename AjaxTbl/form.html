@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-group.col-md-6 
+        {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body id="bgtry">
+        <div class="container">
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4">
+                    <div class="text-center form-control bg-success">
+                        <h1 class="text-warning">Insert Page</h1>
+                    </div>
+                    <form method="post" class="form-control text-white bg-secondary">
+                        <input type="text" id="txtname" name="name" placeholder="Full Name" class="form-control">
+                        <br>
+                        <input type="email" id="txtmail" name="mail" placeholder="E-Mail Id" class="form-control">
+                        <br>
+                        <input type="date" id="txtdob" name="dob" placeholder="Date Of Birth" class="form-control">
+                        <br>
+                        <input type="number" id="txtnumb" name="numb" placeholder="Mobile Number" class="form-control">
+                        <br>
+                        <label class="form-label">Select Gender</label>
+                        <div class="form-check">
+                            <input type="radio" name="gender" id="txtgender" value="MALE" class="form-check-input">
+                            <label class="">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="gender" id="txtgender" value="FEMALE" class="form-check-input">
+                            <label class="">Female</label>
+                        </div>
+                        <div class="text-center">
+                            <input type="button" value="Submit" class="btn btn-dark txtbtn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <script src="jquery.min.js"></script>
+
+    <script>
+            $(document).ready(function()
+            {
+                $(".txtbtn").click(function()
+                {
+                    var fname = $("#txtname").val();
+                    var mail = $("#txtmail").val();
+                    var dob = $("#txtdob").val();
+                    var cont = $("#txtnumb").val();
+                    var gend = $("#txtgender:checked").val();
+
+                    $.post
+                    (
+                        "insert.php",
+                        {
+                            name:fname,
+                            mail:mail,
+                            dob:dob,
+                            numb:cont,
+                            gender:gend
+                        },
+                        function()
+                        {
+                            alert('Data Inserted');
+                        }
+                    );
+
+                });
+            });
+    </script>
+
+</body>
+</html>

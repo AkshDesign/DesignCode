@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjaxData In BS Table</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-sm-10 col-12">
+                <table class="table table-bordered text-center table-striped" id="viewtbl">
+                    <thead>
+                       <tr>
+                          <th data-field="id">
+                              <span class="text-success">ID</span>
+                          </th>
+                          <th data-field="name"> <span class="text-primary">Emloye Name</span> 
+                          </th>
+                          <th data-field="mail"> <span class="text-primary">E-Mail Id</span> 
+                          </th>
+                          <th data-field="dob"> <span class="text-primary">Date OF Birth</span> 
+                          </th>
+                          <th data-field="numb"> <span class="text-primary">Number</span> 
+                          </th>
+                          <th data-field="gender"> <span class="text-primary">Gender</span> 
+                          </th>
+                          <th data-field="Edit"> <span class="text-primary">Edit</span> 
+                          </th>
+                          <th data-field="delete"> <span class="text-primary">Delete</span> 
+                          </th>
+                      </tr>
+                    </thead>
+
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <script src="BS_Tbl_Files/bootstrap-table.min.css"></script>
+    <script src="BS_Tbl_Files/bootstrap-table.min.js"></script>
+    <script src="BS_Tbl_Files/popper.min.js"></script>
+    <script src="jquery.min.js"></script> -->
+
+    
+
+    <script type="text/javascript">
+
+        $(document).ready(function()
+        {
+            $.post("select.php",
+            function(tableData)
+            {
+                myObj = JSON.parse(tableData);
+                $('#viewtbl').bootstrapTable
+                ({
+                    data: myObj
+                });
+            });
+           
+        });
+      
+        $(document).on('click', '.btnedit', function(event) {
+           alert("Edit button Click");
+        });
+        
+        $(document).on('click', '.btndelete', function(event) {
+           //alert("delete button Click");
+            var id = $(this).text();
+            var aid = id.split(";");
+            alert(aid[0]);
+        });
+
+</script>
+
+
+</body>
+</html>

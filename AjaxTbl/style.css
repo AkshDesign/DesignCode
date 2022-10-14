@@ -1,0 +1,9 @@
+*{margin: 0%; padding: 0%;}
+#bgtry
+{
+    background: linear-gradient(to right, rgb(241, 109, 109) , rgb(120, 120, 215));
+}
+form
+{
+    box-shadow: 10px 10px rgb(155, 152, 152);
+}

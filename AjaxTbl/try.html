@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <style>
+        .form-group.col-md-4 {
+        display: flex;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+    
+    
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/> -->
+    <div class="container mt-2">
+        <form action="#" autocomplete="nope">
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-4">
+                <label for="companyName" class="mr-2 col-form-label-sm">Name:&nbsp;</label>
+                <input type="text" class="form-control form-control-sm" autocomplete="off" name="companyName" id="companyName" placeholder="Company Name" required="" pattern="^.+$" value="">
+            </div><br>
+            <div class="form-group col-md-4">
+                <label for="version" class="mr-2 col-form-label-sm">Version:&nbsp;</label>
+                <input type="text" class="form-control form-control-sm" autocomplete="off" name="version" id="version" placeholder="Version" required="" pattern="^.+$" value="">
+            </div><br>
+            <div class="form-group col-md-4">
+                <label for="notes" class="mr-2 col-form-label-sm">Notes:&nbsp;</label>
+                <input type="text" class="form-control form-control-sm" autocomplete="off" name="notes" id="notes" placeholder="Notes" pattern="^.+$" value="">
+            </div>
+        </div>
+        <!-- <div class="form-row">
+            <div class="form-group col-lg-12">
+                <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                <button type="button" class="btn btn-light btn-sm ml-1">Cancel</button>
+            </div>
+        </div> -->
+    </form>
+    </div>
+</body>
+</html>
